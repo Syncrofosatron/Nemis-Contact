@@ -1,3 +1,15 @@
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
+  });
+});
+
+// Contact form behavior (opens email app)
 document.getElementById("contact-form").addEventListener("submit", function (e) {
   e.preventDefault();
 
